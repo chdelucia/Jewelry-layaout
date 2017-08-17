@@ -1,0 +1,40 @@
+{
+    "products":[
+        {
+            "name" : "Laptop",
+            "type" : ["Family"],
+            "price" : 1000,
+            "src": "t1.jpg"
+        },
+        {
+            "name" : "PS5",
+            "type" : ["Love","Family"],
+            "price" : 400,
+            "src": "t2.jpg"
+        },
+        {
+            "name" : "Tablet",
+            "type" : ["Faith","Love"],
+            "price" : 300,
+            "src": "t3.jpg"
+        },
+        {
+            "name" : "Nobile",
+            "type" : ["Faith","Hobbies"],
+            "price" : 220,
+            "src": "t4.jpg"
+        },
+        {
+            "name" : "Kit Lego",
+            "type" : ["Purpose"],
+            "price" : 140,
+            "src": "t5.jpg"
+        },
+        {
+            "name" : "Deportivas",
+            "type" : ["grab","Engraving"],
+            "price" : 120,
+            "src": "t6.jpg"
+        }
+    ]
+}

@@ -1,0 +1,176 @@
+
+@primaryFont : 'Engravers';
+@secondaryFont : 'Rokkitt', serif;
+
+
+.filters {
+    background: blue;
+    background: radial-gradient(ellipse at bottom, #675fea 0%,#2c2e6d 50%,#14134e 100%);
+    padding: 2em 0;
+    font-family: @primaryFont;
+
+  &__background--left{
+      left: 0;
+      position: absolute;
+      top: 1em;
+      width: 5em; 
+  }
+  &__background--right{
+      position: absolute;
+      right: 0;
+      top: 1em;
+      width: 5em;   
+  }
+  &__title{
+      color: white; 
+      font-family: @primaryFont;
+  }
+  &__subtitle{
+      color: white; 
+      font-family: @secondaryFont;
+      font-weight: 300;
+      margin: 2em 0 1em;
+  }
+  &__who{
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      position: relative;
+      &__gif{
+          border-bottom: 2px solid grey;
+          img  {
+              max-width: 140px;
+          }
+      }
+    &__heart-symbol{
+      position: absolute;
+   	  bottom: -30px;
+      left: 26%;
+    }
+  }
+  &__col-padding{
+    padding:.5em
+  }
+  &__button{
+      background: white;
+      font-family: @primaryFont;
+      font-weight: bolder;
+      letter-spacing: 0.3em;
+      padding: 1em;
+      text-transform: uppercase;
+      text-align: center;
+      &:hover,&:focus{
+          cursor: pointer;
+          background:#8881ff;
+      }
+      &.selected{
+          background: #756ef9;
+      }
+  }
+}
+
+.products{
+    padding: 2em 15px;
+    &__sort{
+        margin-bottom: 4em;
+        position: relative;
+        margin-right: -11px;
+        margin-left: -11px;
+        &__box{
+            float: right;
+            border: 2px solid #cec7c7;
+            max-width: 300px;
+            padding: 0.8em 1em;
+            width: 100%;    
+        }
+    }
+    &__box {
+        padding: 1em .3em;
+        &__img-container{
+            display: flex;
+            position: relative;
+            justify-content: center;
+            align-items: center;
+            &:hover .products__box__hover-img{
+                visibility: visible;
+            }
+        }
+        &__hover-img{
+            align-items: center;
+            background: rgba(253, 253, 253, 0.93);
+            cursor:pointer;
+            display: flex;
+            font-family: @primaryFont;
+            height: 90%;
+            justify-content: center;
+            position: absolute;
+            text-align: center;
+            visibility: hidden;
+            width: 90%;
+        }
+    }
+    &__name{
+        font-family: @primaryFont;
+        font-weight: 600;
+        padding: 1em 0 0; 
+        text-align: center;    
+    }
+    &__price{
+        font-family: @primaryFont;  
+        font-weight: 600;
+        text-align: center;
+    }
+}
+
+
+
+//medias
+
+@media all and (min-width: 768px){
+    .filters {
+        &__background--left{
+            width: 9em; 
+        }
+        &__background--right{
+            width: 9em;   
+        }
+        &__button.grab-btn{
+            max-width: 30em;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media all and (min-width: 992px){
+    .filters {
+        &__background--left{
+            left: 5em;
+            width: auto; 
+        }
+        &__background--right{
+            right: 7em;
+            width: auto;   
+        }
+        &__who__gif img  {
+              max-width: 100%;
+        }
+        &__container-flex{
+            display: flex;
+        }
+        &__button.grab-btn {
+            align-items: center;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+        }
+    }
+
+    .products{
+        &__box {
+            padding: 2.2em;
+        }
+        &__sort{
+            margin-right: ~"calc(-15px + 2.2em)";
+        }
+    }
+}

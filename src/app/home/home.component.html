@@ -1,0 +1,66 @@
+ <section class="filters">
+    <div class="container text-center">
+        <img class="filters__background--left"   src="assets/Glitter_Top-Left.png">
+        <img class="filters__background--right" src="assets/Glitter_Top-Right.png">
+
+        <h1 class="filters__title">FIND THE PERFECT GIFT FOR YOUR</h1>
+              
+        <div class="filters__who">
+            <img src="assets/TopCharm-RedCup.png">
+            <div class="filters__who__gif">
+                <img src="assets/words.gif">
+            </div>
+            <img src="assets/TopCharm-NorthStar.png">
+            <img class="filters__who__heart-symbol hidden-xs hidden-sm" src="assets/TopCharm-GoldHeart.png">
+        </div>
+
+        <h3 class="filters__subtitle">Start personalizing your gift with:</h3>
+        
+        <div class="row filters__container-flex">
+            <div class="col-xs-12 col-md-9 utilities__no-padding">
+                <div class="col-xs-6 col-md-4 filters__col-padding">
+                    <div class="filters__button" (click)="onClickFilter($event.currentTarget,'family')">family</div>
+                </div>
+                <div class="col-xs-6 col-md-4 filters__col-padding">
+                    <div class="filters__button" (click)="onClickFilter($event.currentTarget,'love')">love</div>
+                </div>
+                <div class="col-xs-6 col-md-4 filters__col-padding">
+                    <div class="filters__button" (click)="onClickFilter($event.currentTarget,'faith')">faith</div>           
+                </div>
+
+                <div class="col-xs-6 col-md-4 filters__col-padding">
+                    <div class="filters__button" (click)="onClickFilter($event.currentTarget,'hobbies')">hobbies</div> 
+                </div>
+                <div class="col-xs-6 col-md-4 filters__col-padding">
+                    <div class="filters__button" (click)="onClickFilter($event.currentTarget,'purpose')">purpose</div> 
+                </div>
+                <div class="col-xs-6 col-md-4 filters__col-padding">
+                    <div class="filters__button" (click)="onClickFilter($event.currentTarget,'engraving')">engraving</div> 
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-3 filters__col-padding">
+                <div class="filters__button grab-btn" (click)="OnGrabnGoClick($event.currentTarget)">grab-go gift</div> 
+            </div>
+        </div>
+    </div>       
+  </section>
+
+  <section class="products container">
+
+    <div class="products__sort">
+        <div class="products__sort__box">
+            <b>SORT BY:</b> <span> ALL</span>
+        </div>
+    </div>
+
+    <div *ngIf="products" class="row">
+        <div *ngFor='let product of products.products' class="col-xs-6 col-sm-4 products__box">
+            <div class="products__box__img-container">
+                <img class="img-responsive" src="assets/thumbs/{{product.src}}">
+                <div class="products__box__hover-img">Customize & make it yours!</div>
+            </div>
+            <div class="products__name">{{product.name}}</div>
+            <div class="products__price">{{product.price}} $</div>
+        </div>
+    </div>
+  </section>
