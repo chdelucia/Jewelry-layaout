@@ -1,11 +1,19 @@
-import {Component, OnInit} from '@angular/core';
-import {ProductsService} from '../services/products.service';
-
+import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../services/products.service';
+import { trigger, state, style, animate, transition } from '@angular/animations';
 
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.less'],
+    animations: [
+        trigger('fadeIn', [
+            transition(':enter', [
+                style({ opacity: '0' }),
+                animate('2s ease', style({ opacity: '1' })),
+            ]),
+        ]),
+    ],
 })
 export class HomeComponent implements OnInit {
     public products: any[];
@@ -17,26 +25,26 @@ export class HomeComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.getProducts();  
+        this.getProducts();
     }
 
-    getProducts(){
+    getProducts() {
         this._productsService.getProducts().subscribe(
             result => {
-                 this.products = result;
-                 this.cache = result['products'];
+                this.products = result;
+                this.cache = result['products'];
             }
         );
     }
-    
-    filterProductByType(filtersTypes){
+
+    filterProductByType(filtersTypes) {
         let alreadyIn = [];
-        if (filtersTypes.length){
+        if (filtersTypes.length) {
             this.products['products'] = []
-            this.cache.map( item =>{
-                item.type.map( itemType =>{
-                    for (let i = 0; i < filtersTypes.length; i++){
-                        if (itemType.toUpperCase() === filtersTypes[i].toUpperCase() && !alreadyIn.includes(item.name) ){
+            this.cache.map(item => {
+                item.type.map(itemType => {
+                    for (let i = 0; i < filtersTypes.length; i++) {
+                        if (itemType.toUpperCase() === filtersTypes[i].toUpperCase() && !alreadyIn.includes(item.name)) {
                             this.products['products'].push(item);
                             alreadyIn.push(item.name);
                         }
@@ -44,7 +52,7 @@ export class HomeComponent implements OnInit {
                 });
             });
         }
-        else{
+        else {
             this.products['products'] = this.cache;
         }
     }
@@ -58,7 +66,7 @@ export class HomeComponent implements OnInit {
             this.filterProductByType(this.filters);
         }
         else {
-            let index = this.filters.indexOf(type);  
+            let index = this.filters.indexOf(type);
             if (index !== -1) {
                 this.filters.splice(index, 1);
             }
@@ -66,16 +74,23 @@ export class HomeComponent implements OnInit {
         }
     }
 
-    OnGrabnGoClick(element){
+    OnGrabnGoClick(element) {
         let selecteds = document.getElementsByClassName("filters__button selected");
         let i = selecteds.length;
-        while(i--){
+        while (i--) {
             selecteds[i].classList.remove("selected");
         }
         element.classList.add("selected");
         this.filters = ["grab"];
         this.filterProductByType(this.filters);
     }
-    
+
+  /*
+  * Optimization
+  */
+    trackProduct(index, product) {
+        return product ? product.id : undefined;
+    }
+
 
 }

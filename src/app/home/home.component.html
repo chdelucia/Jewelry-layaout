@@ -54,7 +54,7 @@
     </div>
 
     <div *ngIf="products" class="row">
-        <div *ngFor='let product of products.products' class="col-xs-6 col-sm-4 products__box">
+        <div [@fadeIn]="''" *ngFor='let product of products.products; trackBy: trackProduct' class="col-xs-6 col-sm-4 products__box">
             <div class="products__box__img-container">
                 <img class="img-responsive" src="assets/thumbs/{{product.src}}">
                 <div class="products__box__hover-img">Customize & make it yours!</div>

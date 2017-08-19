@@ -505,8 +505,8 @@
 
     <div class="tab-pane fade tab-source-code" id="source">
         <pre class="line-numbers"><code class="language-typescript">import { BrowserModule }  from &#x27;@angular/platform-browser&#x27;;
+import { BrowserAnimationsModule }          from &#x27;@angular/platform-browser/animations&#x27;;
 import { NgModule }       from &#x27;@angular/core&#x27;;
-import { FormsModule }    from &#x27;@angular/forms&#x27;;
 import { HttpModule }     from &#x27;@angular/http&#x27;;
 import { routes, appRoutingProviders } from &#x27;./app.routes&#x27;
 
@@ -521,7 +521,7 @@ import { ProductsService } from &#x27;./services/products.service&#x27;;
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    BrowserAnimationsModule,
     HttpModule,
     routes,
   ],

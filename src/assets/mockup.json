@@ -1,36 +1,42 @@
 {
     "products":[
         {
+            "id" : 0,
             "name" : "Laptop",
             "type" : ["Family"],
             "price" : 1000,
             "src": "t1.jpg"
         },
         {
+            "id" : 1,
             "name" : "PS5",
             "type" : ["Love","Family"],
             "price" : 400,
             "src": "t2.jpg"
         },
         {
+            "id" : 2,
             "name" : "Tablet",
             "type" : ["Faith","Love"],
             "price" : 300,
             "src": "t3.jpg"
         },
         {
+            "id" : 3,
             "name" : "Nobile",
             "type" : ["Faith","Hobbies"],
             "price" : 220,
             "src": "t4.jpg"
         },
         {
+            "id" : 4,
             "name" : "Kit Lego",
             "type" : ["Purpose"],
             "price" : 140,
             "src": "t5.jpg"
         },
         {
+            "id" : 5,
             "name" : "Deportivas",
             "type" : ["grab","Engraving"],
             "price" : 120,

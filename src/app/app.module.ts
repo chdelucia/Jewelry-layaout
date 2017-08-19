@@ -1,6 +1,6 @@
 import { BrowserModule }  from '@angular/platform-browser';
+import { BrowserAnimationsModule }          from '@angular/platform-browser/animations';
 import { NgModule }       from '@angular/core';
-import { FormsModule }    from '@angular/forms';
 import { HttpModule }     from '@angular/http';
 import { routes, appRoutingProviders } from './app.routes'
 
@@ -15,7 +15,7 @@ import { ProductsService } from './services/products.service';
   ],
   imports: [
     BrowserModule,
-    FormsModule,
+    BrowserAnimationsModule,
     HttpModule,
     routes,
   ],
